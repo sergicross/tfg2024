@@ -1,0 +1,78 @@
+### Mostrar todos los dispositivos
+GET http://localhost:3000/api/dispositivos
+
+### Mostrar dispositivo por _id
+GET http://localhost:3000/api/dispositivos/5
+
+### Mostrar dispositivo por nombre
+GET http://localhost:3000/api/dispositivos/nombre/MedidorFaseA
+
+### Mostrar dispositivo por ip
+GET http://localhost:3000/api/dispositivos/ip/172.20.137.10
+
+### Añadir un dispositivo
+POST  http://localhost:3000/api/dispositivos
+content-type: application/json
+
+{
+    "nombre": "MedidorFaseA",
+    "ip": "172.20.137.10",
+    "puerto": 502,
+    "registros": [
+    {
+        "nombreRegistro": "frecuencia",
+        "direccionMemoria": 52,
+        "bytesLeer": 2,
+        "unidades": 5503
+    },
+    {
+        "nombreRegistro": "tension fase L1",
+        "direccionMemoria": 0,
+        "bytesLeer": 2,
+        "unidades": 5500
+    },
+    {
+        "nombreRegistro": "tension fase L2",
+        "direccionMemoria": 16,
+        "bytesLeer": 2,
+        "unidades": 5500
+    },
+    {
+        "nombreRegistro": "tension fase L3",
+        "direccionMemoria": 32,
+        "bytesLeer": 2,
+        "unidades": 5500
+    },
+    {
+        "nombreRegistro": "THD tension L1",
+        "direccionMemoria": 78,
+        "bytesLeer": 2,
+        "unidades": 5506
+    },
+    {
+        "nombreRegistro": "THD tension L2",
+        "direccionMemoria": 80,
+        "bytesLeer": 2,
+        "unidades": 5506
+    },
+    {
+        "nombreRegistro": "THD tension L3",
+        "direccionMemoria": 82,
+        "bytesLeer": 2,
+        "unidades": 5506
+    }
+    ]
+
+}
+
+###Eliminar un dispositivo pasando su id
+DELETE  http://localhost:3000/api/dispositivos/668d3e048d33ffdfea8a6a4e
+
+###Modificar datos dispositivo
+PATCH    http://localhost:3000/api/dispositivos/668c22d5e1627fb2e23658b
+content-type: application/json
+
+{
+    "nombre": "MedidorFaseA"
+    
+}
